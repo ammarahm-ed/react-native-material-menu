@@ -1,5 +1,4 @@
 import React from 'react';
-
 import PropTypes from 'prop-types';
 
 import {
@@ -61,9 +60,9 @@ MenuItem.propTypes = {
   disabledTextColor: PropTypes.string,
   ellipsizeMode: PropTypes.string,
   onPress: PropTypes.func,
-  style: TouchableHighlight.propTypes.style,
-  textStyle: Text.propTypes.style,
-  underlayColor: TouchableHighlight.propTypes.underlayColor,
+  style: PropTypes.object,
+  textStyle: PropTypes.object,
+  underlayColor: PropTypes.string,
 };
 
 MenuItem.defaultProps = {
