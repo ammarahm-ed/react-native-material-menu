@@ -1,4 +1,4 @@
-# react-native-reanimated-material-menu &middot; [![npm](https://img.shields.io/npm/v/react-native-material-menu.svg)](https://www.npmjs.com/package/react-native-material-menu) [![license](https://img.shields.io/npm/l/react-native-material-menu.svg)](https://github.com/mxck/react-native-material-menu/blob/master/LICENSE)
+# react-native-reanimated-material-menu &middot; [![npm](https://img.shields.io/npm/v/react-native-reanimated-material-menu.svg)](https://www.npmjs.com/package/react-native-reanimated-material-menu) [![license](https://img.shields.io/npm/l/react-native-material-menu.svg)](https://github.com/mxck/react-native-material-menu/blob/master/LICENSE)
 
  [Material
 menu](https://material.io/guidelines/components/menus.html) component for React
