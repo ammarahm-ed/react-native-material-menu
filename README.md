@@ -2,7 +2,7 @@
 
  [Material
 menu](https://material.io/guidelines/components/menus.html) component for React
-Native using Reanimated for 60FPS animations with automatic RTL support. Forked from [react-native-material-menu](https://github.com/mxck/react-native-material-menu/)
+Native using **[Reanimated Library](https://github.com/software-mansion/react-native-reanimated) for 60FPS animations** with automatic RTL support. Forked from [react-native-material-menu](https://github.com/mxck/react-native-material-menu/)
 
 <img src="https://media.giphy.com/media/3ov9jUvQH4U82JGNRC/giphy.gif" />
 
