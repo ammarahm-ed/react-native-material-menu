@@ -1,6 +1,6 @@
 # react-native-reanimated-material-menu &middot; [![npm](https://img.shields.io/npm/v/react-native-material-menu.svg)](https://www.npmjs.com/package/react-native-material-menu) [![license](https://img.shields.io/npm/l/react-native-material-menu.svg)](https://github.com/mxck/react-native-material-menu/blob/master/LICENSE)
 
- Material
+ [Material
 menu](https://material.io/guidelines/components/menus.html) component for React
 Native using Reanimated for 60FPS animations with automatic RTL support. Forked from [react-native-material-menu](https://github.com/mxck/react-native-material-menu/)
 
