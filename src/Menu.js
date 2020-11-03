@@ -1,11 +1,7 @@
 import React from 'react';
-
 import PropTypes from 'prop-types';
-
 import {
-  Animated,
   Dimensions,
-  Easing,
   Modal,
   Platform,
   StatusBar,
@@ -15,6 +11,7 @@ import {
   ViewPropTypes,
   I18nManager,
 } from 'react-native';
+import Animated,{Easing} from "react-native-reanimated"
 
 const STATES = {
   HIDDEN: 'HIDDEN',
@@ -22,7 +19,7 @@ const STATES = {
   SHOWN: 'SHOWN',
 };
 
-const EASING = Easing.bezier(0.4, 0, 0.2, 1);
+const EASING =  Easing.bezier(0.4, 0, 0.2, 1);
 const SCREEN_INDENT = 8;
 
 class Menu extends React.Component {
@@ -39,8 +36,8 @@ class Menu extends React.Component {
 
     buttonWidth: 0,
     buttonHeight: 0,
-
-    menuSizeAnimation: new Animated.ValueXY({ x: 0, y: 0 }),
+    menuSizeXAnimation: new Animated.Value(0),
+    menuSizeYAnimation: new Animated.Value(0),
     opacityAnimation: new Animated.Value(0),
   };
 
@@ -63,18 +60,21 @@ class Menu extends React.Component {
         menuHeight: height,
       },
       () => {
-        Animated.parallel([
-          Animated.timing(this.state.menuSizeAnimation, {
-            toValue: { x: width, y: height },
-            duration: this.props.animationDuration,
+          Animated.timing(this.state.menuSizeXAnimation, {
+            toValue: width,
+            duration: this.props.animationDuration - 25,
             easing: EASING,
-          }),
+          }).start()
+          Animated.timing(this.state.menuSizeYAnimation, {
+            toValue: height,
+            duration: this.props.animationDuration - 25,
+            easing: EASING,
+          }).start()
           Animated.timing(this.state.opacityAnimation, {
             toValue: 1,
-            duration: this.props.animationDuration,
+            duration: this.props.animationDuration + 25,
             easing: EASING,
-          }),
-        ]).start();
+          }).start()
       },
     );
   };
@@ -107,7 +107,8 @@ class Menu extends React.Component {
       this.setState(
         {
           menuState: STATES.HIDDEN,
-          menuSizeAnimation: new Animated.ValueXY({ x: 0, y: 0 }),
+          menuSizeXAnimation: new Animated.Value(0),
+          menuSizeYAnimation: new Animated.Value(0),
           opacityAnimation: new Animated.Value(0),
         },
         () => {
@@ -137,7 +138,8 @@ class Menu extends React.Component {
     const windowHeight = dimensions.height - (StatusBar.currentHeight || 0);
 
     const {
-      menuSizeAnimation,
+      menuSizeXAnimation,
+      menuSizeYAnimation,
       menuWidth,
       menuHeight,
       buttonWidth,
@@ -145,8 +147,8 @@ class Menu extends React.Component {
       opacityAnimation,
     } = this.state;
     const menuSize = {
-      width: menuSizeAnimation.x,
-      height: menuSizeAnimation.y,
+      width: menuSizeXAnimation,
+      height: menuSizeYAnimation,
     };
 
     // Adjust position of menu
@@ -158,7 +160,7 @@ class Menu extends React.Component {
       (!isRTL && left + menuWidth > windowWidth - SCREEN_INDENT)
     ) {
       transforms.push({
-        translateX: Animated.multiply(menuSizeAnimation.x, -1),
+        translateX: Animated.multiply(menuSizeXAnimation, -1),
       });
 
       left = Math.min(windowWidth - SCREEN_INDENT, left + buttonWidth);
@@ -169,7 +171,7 @@ class Menu extends React.Component {
     // Flip by Y axis if menu hits bottom screen border
     if (top > windowHeight - menuHeight - SCREEN_INDENT) {
       transforms.push({
-        translateY: Animated.multiply(menuSizeAnimation.y, -1),
+        translateY: Animated.multiply(menuSizeYAnimation, -1),
       });
 
       top = windowHeight - SCREEN_INDENT;
