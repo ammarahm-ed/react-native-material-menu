@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
 import {
   Platform,
@@ -10,10 +9,10 @@ import {
   View,
 } from 'react-native';
 
-const Touchable = Platform.select({
-  android: TouchableNativeFeedback,
-  default: TouchableHighlight,
-});
+const Touchable =
+  Platform.OS === 'android' && Platform.Version >= 21
+    ? TouchableNativeFeedback
+    : TouchableHighlight;
 
 function MenuItem({
   children,
@@ -26,7 +25,7 @@ function MenuItem({
   ...props
 }) {
   const touchableProps =
-    Platform.OS === 'android'
+    Platform.OS === 'android' && Platform.Version >= 21
       ? { background: TouchableNativeFeedback.SelectableBackground() }
       : {};
 
@@ -54,17 +53,6 @@ function MenuItem({
   );
 }
 
-MenuItem.propTypes = {
-  children: PropTypes.node.isRequired,
-  disabled: PropTypes.bool,
-  disabledTextColor: PropTypes.string,
-  ellipsizeMode: PropTypes.string,
-  onPress: PropTypes.func,
-  style: PropTypes.object,
-  textStyle: PropTypes.object,
-  underlayColor: PropTypes.string,
-};
-
 MenuItem.defaultProps = {
   disabled: false,
   disabledTextColor: '#bdbdbd',
@@ -74,7 +62,7 @@ MenuItem.defaultProps = {
 
 const styles = StyleSheet.create({
   container: {
-    height: 35,
+    height: 48,
     justifyContent: 'center',
     maxWidth: 248,
     minWidth: 124,
@@ -82,7 +70,7 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 14,
     fontWeight: '400',
-    paddingHorizontal: 12,
+    paddingHorizontal: 16,
     textAlign: 'left',
   },
 });
