@@ -1,7 +1,7 @@
 {
-  "name": "react-native-material-menu",
+  "name": "react-native-reanimated-material-menu",
   "version": "2.0.0",
-  "description": "Material Menu for React Native",
+  "description": "Material Menu for React Native using Reanimated Library for 60FPS Animations",
   "main": "src/index.js",
   "keywords": [
     "react-native",
@@ -17,7 +17,7 @@
     "react-native-menu",
     "react-native-material-menu"
   ],
-  "author": "Maksim Milyutin <mmxckk@gmail.com> (https://github.com/mxck) Ammar Ahmed <ammarahmed6506@gmail.com> (https://github.com/ammarahm-ed/)",
+  "author": "Maksim Milyutin <mmxckk@gmail.com> (https://github.com/mxck) & Ammar Ahmed <ammarahmed6506@gmail.com> (https://github.com/ammarahm-ed/)",
   "license": "MIT",
   "scripts": {
     "prettify": "import-sort --write 'src/**/*.js' && prettier --write 'src/**/*.js' && eslint 'src/**/*.js'"
