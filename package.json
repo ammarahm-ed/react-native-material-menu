@@ -1,6 +1,6 @@
 {
   "name": "react-native-material-menu",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Material Menu for React Native",
   "main": "src/index.js",
   "keywords": [
@@ -10,9 +10,14 @@
     "material-menu",
     "react-component",
     "material",
-    "dropdown"
+    "dropdown",
+    "dropdown-menu",
+    "reanimated",
+    "context-menu",
+    "react-native-menu",
+    "react-native-material-menu"
   ],
-  "author": "Maksim Milyutin <mmxckk@gmail.com> (https://github.com/mxck)",
+  "author": "Maksim Milyutin <mmxckk@gmail.com> (https://github.com/mxck) Ammar Ahmed <ammarahmed6506@gmail.com> (https://github.com/ammarahm-ed/)",
   "license": "MIT",
   "scripts": {
     "prettify": "import-sort --write 'src/**/*.js' && prettier --write 'src/**/*.js' && eslint 'src/**/*.js'"
@@ -38,9 +43,6 @@
     "react": ">= 16.3.0",
     "react-native": ">= 0.54.0"
   },
-  "dependencies": {
-    "prop-types": "^15.6.0"
-  },
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged"
@@ -58,10 +60,10 @@
     ]
   },
   "bugs": {
-    "url": "https://github.com/mxck/react-native-material-menu/issues"
+    "url": "https://github.com/ammarahm-ed/react-native-reanimated-material-menu/issues"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/mxck/react-native-material-menu.git"
+    "url": "https://github.com/ammarahm-ed/react-native-reanimated-material-menu.git"
   }
 }
