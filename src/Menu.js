@@ -255,6 +255,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
     borderRadius: 4,
     opacity: 0,
+    overflow:"hidden",
 
     // Shadow
     ...Platform.select({
