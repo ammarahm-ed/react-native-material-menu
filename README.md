@@ -11,13 +11,24 @@ Native using **[Reanimated Library](https://github.com/software-mansion/react-na
 Using yarn
 
 ```sh
-yarn add react-native-material-menu
+yarn add react-native-reanimated-material-menu
 ```
 
 or using npm
 
 ```sh
-npm install --save react-native-material-menu
+npm install --save react-native-reanimated-material-menu
+```
+
+You should also install react-native-reanimated library:
+
+```sh
+ yarn add react-native-reanimated
+```
+For iOS, go to ios folder and run pod install:
+```sh
+  cd ios
+  pod install
 ```
 
 ## Usage example ([expo demo](https://snack.expo.io/@mxck/react-native-material-menu-demo))
